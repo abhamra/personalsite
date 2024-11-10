@@ -1,0 +1,44 @@
+# The URL the site will be built for
+base_url = "https://abhamra.com"
+title = "Arjun's website!"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+theme = "anemone"
+default_language = "en"
+taxonomies = [{name = "tags"}]
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+render_emoji = true
+external_links_target_blank = true
+smart_punctuation = true
+highlight_code = false
+highlight_theme = "gruvbox-dark"
+
+[slugify]
+paths = "on"
+taxonomies = "on"
+anchors = "on"
+
+[link_checker]
+internal_level = "warn"
+
+[extra]
+# Put all your custom variables here
+theme = "auto"
+
+author = "Arjun Bhamra"
+display_author = true
+
+header_nav = [
+  { name_en = "/home/", url = "/" },
+  { name_en = "/about/", url = "/about" },
+  # { name_en = "/journal/", url = "/journal" },
+  { name_en = "/blog/", url = "/blog" },
+]
