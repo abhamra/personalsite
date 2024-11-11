@@ -38,9 +38,8 @@ The following is a blockquote:
 
 Now some code:
 
-```js
-const ultimateTruth = 'this theme is the best!';
-console.log(ultimateTruth);
+```rust
+println!("Hello world!");
 ```
 
 And here is some `inline code`!

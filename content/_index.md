@@ -3,47 +3,40 @@
 
 ## Hi, I'm Arjun!
 
-This is my personal website and it's currently under construction; come back soon.
-<!-- anemone theme is designed to provide a nearly no-JavaScript, efficient, and minimalist experience for your website. Embracing simplicity, the theme focuses on content and readability, ensuring a seamless user experience without unnecessary distractions. -->
-<!---->
-<!-- > *"Useless blockquote"* -->
-<!---->
-<!-- ## Blog Posts -->
-<!---->
-<!-- Explore our insightful blog posts on a variety of topics: -->
-<!---->
-<!-- - 🥣 [Overview Post](./blog/overview-post) -->
-<!-- - 🥣 [Overview Post But in French](./fr/blog/overview-post) -->
-<!-- - 🈚 [Language Tests](./blog/language-tests) -->
-<!-- - 🔥 [Very Very Very Long Title And Very Very Very Short Content](./blog/very-very-very-long-title-and-very-very-very-short-content) -->
-<!-- - 📺 [Post Example With Headings And TOC](./blog/post-example-with-headings-and-toc) -->
-<!---->
-<!-- ## Tags -->
-<!---->
-<!-- Browse our posts by tags: -->
-<!---->
-<!-- - [example](./tags/example) -->
-<!---->
-<!-- ## Another List -->
-<!---->
-<!-- Discover additional content: -->
-<!---->
-<!-- - With Subitems -->
-<!--   - With Subsubitems -->
-<!--   - [Example Page](./about) -->
-<!-- - this list is just the content of `content/_index.md`, the tests are shamelessly stolen from [no style, please!](https://www.getzola.org/themes/no-style-please/) -->
-<!---->
-<!-- ## Online Presence -->
-<!---->
-<!-- Stay connected with us: -->
-<!---->
-<!-- - Email: [jgll6dij6@mozmail.com](mailto:jgll6dij6@mozmail.com) -->
-<!-- - Code Repositories: [Speyll@GitHub](https://github.com/Speyll) -->
-<!-- - @Speyll anywhere else. -->
-<!---->
-<!-- ## Webrings -->
-<!---->
-<!-- Join our webrings and explore more: -->
-<!---->
-<!-- - 🈯 {{ webring(prev="#", webring="#", webringName="Random Webring", next="#") }} -->
-<!-- - 🎶 {{ webring(prev="#", webring="#", webringName="Another Webring", next="#") }} -->
+I'm a 3rd year CS major at Georgia Tech concentrating in [Systems Architecture](https://www.cc.gatech.edu/academics/threads/systems-architecture) and [Theory](https://www.cc.gatech.edu/academics/threads/theory) 
+
+You can contact me at `arjun.bhamra25@gmail.com`, and my Github is [@abhamra](https://github.com/abhamra)
+
+---
+### Work
+I've spent most of my (limited) work-life in the space of quantum compilers; in the summer of 2023, I worked @ [Quantinuum](https://www.quantinuum.com/), where I designed a domain specific language for Repeat-Until-Success circuits. The following summer, I worked @ [IBM](https://www.ibm.com/quantum) on rewriting their hardware Quantum Assembly compiler in [Rust](https://www.rust-lang.org/).
+
+I also co-chair [depdently-typed](https://dtyped.netlify.app/), the compilers and programming languages club @ GT.
+
+### Research
+I work @ the [Center for Novel Computing Heirarchies (CRNCH)](https://crnch.gatech.edu/) in the TINKER Lab with Dr. Tom Conte and PhD student Austin Adams on quantum programming languages and compilers! Our paper, "ASDF: A Compiler for Qwerty, a Basis-Oriented Quantum Programming Language", has been accepted to CGO 2025!
+
+A more complete resume can be found [here](/cv).
+
+---
+### What do I do?
+I read somewhere recently that when asked about what someone does, the first answer is some sort of work related answer, and any hobby or passion is designated second-place. Perhaps that's because of how the question was phrased, but it's an interesting thought. Anywho, here are some things I find curious, interesting, fun, and the like :]
+#### Academic
+- Quantum computing
+- Compilers
+- Programming Language Theory
+- Operating Systems (and systems stuff, more broadly)
+- NVIM
+#### Personal
+- Drumming
+- Music, particularly Jazz and Funk, although I'll listen to basically anything that isn't country
+    - [A favorite playlist](https://open.spotify.com/playlist/6Cb0nIeiLKU5iLzKOTE2V1?si=7de1db6e6d134ff3)
+- Anime and animated shows (FMAB, TLOVM, A:TLA, Arcane, and Blue Eye Samurai are some standouts!)
+- FPS Games (currently playing R6, The FINALS, Overwatch, and Deadlock)
+- DND (we try not to minmax quite hard, here)
+- Biking
+- Creative Writing (*work in progress*)
+
+### And now, a nice quote
+> "Experience becoming [...] to make your soul grow"
+> - Kurt Vonnegut
