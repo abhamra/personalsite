@@ -6,8 +6,12 @@
 <img src="https://github.com/abhamra/personalsite/blob/master/content/Images/headshot.jpg?raw=true" alt="Headshot of me!" width="190" align="right" />
 
 I'm a 3rd year CS major @ Georgia Tech concentrating in [Systems Architecture](https://www.cc.gatech.edu/academics/threads/systems-architecture) and [Theory](https://www.cc.gatech.edu/academics/threads/theory). I'm currently learning about quantum computing, compilers, and PL theory!
-
-You can contact me at `arjun.bhamra25@gmail.com`, and my Github is [@abhamra](https://github.com/abhamra)
+<!---->
+<!-- You can contact me @ [arjun.bhamra25@gmail.com](mailto:arjun.bhamra25@gmail.com), [@abhamra](https://github.com/abhamra) (Github), and [arjun-bhamra](https://www.linkedin.com/in/arjun-bhamra/) (LinkedIn). -->
+You can contact me @
+- [arjun.bhamra25@gmail.com](mailto:arjun.bhamra25@gmail.com)
+- [@abhamra](https://github.com/abhamra) on Github
+- [arjun-bhamra](https://www.linkedin.com/in/arjun-bhamra/) on LinkedIn
 
 ---
 ### Work
