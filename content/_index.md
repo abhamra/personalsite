@@ -11,7 +11,7 @@ You can contact me at `arjun.bhamra25@gmail.com`, and my Github is [@abhamra](ht
 ### Work
 I've spent most of my (limited) work-life in the space of quantum compilers; in the summer of 2023, I worked @ [Quantinuum](https://www.quantinuum.com/), where I designed a domain specific language for Repeat-Until-Success circuits. The following summer, I worked @ [IBM](https://www.ibm.com/quantum) on rewriting their hardware Quantum Assembly compiler in [Rust](https://www.rust-lang.org/).
 
-I also co-chair [depdently-typed](https://dtyped.netlify.app/), the compilers and programming languages club @ GT.
+I also co-chair [dependently-typed](https://dtyped.netlify.app/), the compilers and programming languages club @ GT.
 
 ### Research
 I work @ the [Center for Novel Computing Heirarchies (CRNCH)](https://crnch.gatech.edu/) in the TINKER Lab with Dr. Tom Conte and PhD student Austin Adams on quantum programming languages and compilers! Our paper, "ASDF: A Compiler for Qwerty, a Basis-Oriented Quantum Programming Language", has been accepted to CGO 2025!
@@ -34,7 +34,6 @@ I read somewhere recently that when asked about what someone does, the first ans
 - Anime and animated shows (FMAB, TLOVM, A:TLA, Arcane, and Blue Eye Samurai are some standouts!)
 - FPS Games (currently playing R6, The FINALS, Overwatch, and Deadlock)
 - DND (we try not to minmax quite hard, here)
-- Biking
 - Creative Writing (*work in progress*)
 
 ### And now, a nice quote
