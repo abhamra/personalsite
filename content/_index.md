@@ -3,13 +3,14 @@
 
 ## Hi, I'm Arjun!
 
+<!-- <img src="./Images/headshot.jpg" alt="Headshot of me!" /> -->
 I'm a 3rd year CS major at Georgia Tech concentrating in [Systems Architecture](https://www.cc.gatech.edu/academics/threads/systems-architecture) and [Theory](https://www.cc.gatech.edu/academics/threads/theory) 
 
 You can contact me at `arjun.bhamra25@gmail.com`, and my Github is [@abhamra](https://github.com/abhamra)
 
 ---
 ### Work
-I've spent most of my (limited) work-life in the space of quantum compilers; in the summer of 2023, I worked @ [Quantinuum](https://www.quantinuum.com/), where I designed a domain specific language for Repeat-Until-Success circuits. The following summer, I worked @ [IBM](https://www.ibm.com/quantum) on rewriting their hardware Quantum Assembly compiler in [Rust](https://www.rust-lang.org/).
+I've spent most of my (limited) work life in the space of quantum compilers; in the summer of 2023, I worked @ [Quantinuum](https://www.quantinuum.com/), where I designed a domain specific language for Repeat-Until-Success circuits. The following summer, I worked @ [IBM](https://www.ibm.com/quantum) on rewriting their hardware Quantum Assembly compiler in [Rust](https://www.rust-lang.org/).
 
 I also co-chair [depdently-typed](https://dtyped.netlify.app/), the compilers and programming languages club @ GT.
 
