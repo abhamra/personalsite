@@ -26,7 +26,7 @@ A more complete resume can be found [here](resume.pdf).
 
 ---
 ### What do I do?
-I read somewhere recently that when asked about what someone does, the first answer is some sort of work related answer, and any hobby or passion is designated second-place. Perhaps that's because of how the que]stion was phrased, but it's an interesting thought. Anywho, here are some things I find curious, interesting, fun, and the like :]
+I read somewhere recently that when asked about what someone does, the first answer is some sort of work related answer, and any hobby or passion is designated second-place. Perhaps that's because of how the question was phrased, but it's an interesting thought. Anywho, here are some things I find curious, interesting, fun, and the like :]
 - Drumming
 - Music, particularly Jazz and Funk, although I'll listen to basically anything that isn't country
     - [A favorite playlist](https://open.spotify.com/playlist/6Cb0nIeiLKU5iLzKOTE2V1?si=7de1db6e6d134ff3)
