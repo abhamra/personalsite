@@ -22,7 +22,7 @@ I also co-chair [dependently-typed](https://dtyped.netlify.app/), the compilers 
 ### Research
 I work @ the [Center for Novel Computing Heirarchies (CRNCH)](https://crnch.gatech.edu/) in the TINKER Lab with Dr. Tom Conte and PhD student Austin Adams on quantum programming languages and compilers! Our paper, "ASDF: A Compiler for Qwerty, a Basis-Oriented Quantum Programming Language", has been accepted to CGO 2025!
 
-A more complete resume can be found [here](/cv).
+A more complete resume can be found [here](https://drive.google.com/file/d/1w5fmX3-xtVa-gHTitBgyZ-OaY9PYudZJ/view?usp=sharing).
 
 ---
 ### What do I do?

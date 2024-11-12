@@ -40,7 +40,7 @@ display_author = true
 
 header_nav = [
   { name_en = "<home", url = "/" },
-  { name_en = "|cv|", url = "/cv" },
+  { name_en = "|resume|", url = "https://drive.google.com/file/d/1w5fmX3-xtVa-gHTitBgyZ-OaY9PYudZJ/view?usp=sharing" },
   # { name_en = "/journal/", url = "/journal" },
   { name_en = "blog>", url = "/blog" },
 ]
