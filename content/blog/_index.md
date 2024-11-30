@@ -6,3 +6,4 @@ page_template = "blog-page.html"
 +++
 
 > List of all *[tags](/tags)*
+
