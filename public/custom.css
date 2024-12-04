@@ -1,6 +1,7 @@
 pre {
   padding: 1rem;
-  overflow: visible !important;
+  overflow: auto !important;
+  max-height: unset !important;
 }
 /* The line numbers already provide some kind of left/right padding */
 pre[data-linenos] {
@@ -25,6 +26,3 @@ pre table {
   border-collapse: collapse;
 }
 
-code{
-    display: block !important; /* Ensure code behaves like a block element */
-}
