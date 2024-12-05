@@ -40,7 +40,7 @@ display_author = true
 
 header_nav = [
   { name_en = "<home", url = "/" },
-  { name_en = "|resume|", url = "resume.pdf" },
+  { name_en = "|resume|", url = "/resume.pdf" },
   # { name_en = "/journal/", url = "/journal" },
   { name_en = "blog>", url = "/blog" },
 ]
