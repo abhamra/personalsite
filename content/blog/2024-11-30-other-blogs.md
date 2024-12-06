@@ -11,3 +11,6 @@ I guess I can't call this a brief detour from our regularly scheduled programmin
 
 ### Blogs I Like:
 1. [matklad](https://matklad.github.io/)
+2. [Ved Thiru](https://www.vedthiru.com)
+3. [Max Bernstein](https://bernsteinbear.com/), particularly his [PL Resources](https://bernsteinbear.com/pl-resources/) page (and his great articles)
+4. [Scattered Thoughts](https://www.scattered-thoughts.net/)
