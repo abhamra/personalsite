@@ -10,6 +10,7 @@ default_language = "en"
 taxonomies = [{name = "tags"}]
 
 generate_feeds = true
+author = "Arjun Bhamra"
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
@@ -31,11 +32,11 @@ anchors = "on"
 [link_checker]
 internal_level = "warn"
 
+
 [extra]
 # Put all your custom variables here
 theme = "auto"
 
-author = "Arjun Bhamra"
 display_author = true
 
 header_nav = [
