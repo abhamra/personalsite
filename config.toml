@@ -9,7 +9,7 @@ theme = "anemone"
 default_language = "en"
 taxonomies = [{name = "tags"}]
 
-# generate_feeds = true
+generate_feeds = true
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false

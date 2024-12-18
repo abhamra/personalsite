@@ -2,6 +2,9 @@
 <html lang="{% if page %}{{ page.lang }}{% else %}{{ config.default_language }}{% endif %}">
 <head>
     {% include "head.html" %}
+    {% block rss %}
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml", trailing_slash=false) }}">
+    {% endblock %}
 </head>
 <!-- <link rel="stylesheet" type="text/css" href="{{ get_url(path='css/custom.css', trailing_slash=false) | safe }}"/> -->
 <style>
