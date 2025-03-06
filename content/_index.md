@@ -14,6 +14,14 @@ You can contact me @
 - [arjun-bhamra](https://www.linkedin.com/in/arjun-bhamra/) on LinkedIn
 
 ---
+### Latest Updates
+6/5/2025
+> I recently attended the 2025 iteration of Code Generation and Optimization, where I presented my work on adding type inference
+> to Qwerty, a quantum programming language that I helped create! Following the poster presentation, I was one of 3 students selected
+> to give a talk on my work, and I was awarded 2nd place!
+---
+
+
 ### Work
 I've spent most of my (limited) work life in the space of quantum compilers; in the summer of 2023, I worked @ [Quantinuum](https://www.quantinuum.com/), where I designed a domain specific language for Repeat-Until-Success circuits. The following summer, I worked @ [IBM](https://www.ibm.com/quantum) on rewriting their hardware Quantum Assembly compiler in [Rust](https://www.rust-lang.org/rust).
 
@@ -31,7 +39,7 @@ I read somewhere recently that when asked about what someone does, the first ans
 - Music, particularly Jazz and Funk, although I'll listen to basically anything that isn't country
     - [A favorite playlist](https://open.spotify.com/playlist/6Cb0nIeiLKU5iLzKOTE2V1?si=7de1db6e6d134ff3)
 - Anime and animated shows (FMAB, TLOVM, A:TLA, Arcane, and Blue Eye Samurai are some standouts!)
-- FPS Games (currently playing R6, The FINALS, Overwatch, and Deadlock)
+- FPS Games (currently playing Marvel Rivals, R6, and Overwatch)
 - DND (we try not to minmax quite hard, here)
 - Creative Writing (*work in progress*)
 - My [dotfiles](https://github.com/abhamra/dotfiles) setup
