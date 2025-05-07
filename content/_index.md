@@ -15,7 +15,7 @@ You can contact me @
 
 ---
 ### Latest Updates
-6/5/2025
+3/5/2025
 > I recently attended the 2025 iteration of Code Generation and Optimization, where I presented my work on adding type inference
 > to Qwerty, a quantum programming language that I helped create! Following the poster presentation, I was one of 3 students selected
 > to give a talk on my work, and I was awarded 2nd place!
