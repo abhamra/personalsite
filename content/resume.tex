@@ -19,19 +19,6 @@
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \input{glyphtounicode}
-\setlength{\footskip}{4.08003pt}
-
-
-%----------FONT OPTIONS----------
-% sans-serif
-% \usepackage[sfdefault]{FiraSans}
-% \usepackage[sfdefault]{roboto}
-% \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
-
-% serif
-% \usepackage{CormorantGaramond}
-% \usepackage{charter}
 
 
 \pagestyle{fancy}
@@ -103,22 +90,18 @@
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
+% to fix the compilation warnings
+\setlength{\footskip}{5pt}
 \begin{document}
 
 %----------HEADING----------
-% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
-%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
-% \end{tabular*}
 
 \begin{center}
-  \textbf{\Huge {Arjun Bhamra}} \\ \vspace{1pt}
+    \textbf{\Huge Arjun Bhamra} \\ \vspace{1pt}
     \small U.S. Citizen $|$ 
     % abhamra@gatech.edu $|$ 
     \href{mailto:abhamra3@gatech.edu}{\underline{abhamra@gatech.edu}} 
     $|$ 
-    % linkedin.com/in/arjun-bhamra $|$
     \href{https://linkedin.com/in/arjun-bhamra}{\underline{linkedin.com/in/arjun-bhamra}} $|$
    \href{https://github.com/abhamra}{\underline{github.com/abhamra}} $ | $
     \href{https://abhamra.com}{\underline{abhamra.com}}
@@ -131,14 +114,22 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {Georgia Institute of Technology}{Atlanta, GA}
-      {Bachelor of Science in Computer Science, GPA: 3.85}{ May 2026}
+      {Bachelor of Science in Computer Science, GPA: 3.87}{ May 2026}
 
   \resumeSubHeadingListEnd
-  \hspace{6pt} \textit{Relevant Coursework}: Design of Algorithms, Operating Systems, Graph Theory, Compilers (IP),
-  \\ \hspace{6pt} Advanced Computer Organization (IP), Processor Design (IP)
+  \hspace{6pt} \textit{Relevant Coursework}: Design of Algorithms, Operating Systems, Graph Theory, Compilers, Advanced Computer Organization, Processor Design
 %-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
+    \resumeSubheading
+      {IBM Research}{May 2025 -- August 2025}
+      {Research Intern}{Yorktown Heights, NY}
+      \resumeItemListStart
+        \resumeItem{Designed a new qubit-efficient quantum algorithm for solving the Traveling Salesman Problem}
+        \resumeItem{Leveraged permutation encoding and Pauli Correlation Encoding, along with a K-Means path slicing strategy to reduce qubit overhead by 10x, paving the way for solving utility scale problems on quantum hardware}
+        % \resumeItem{Paper in progress, in collaboration with IBM partners}
+        % \resumeItem{Solved TSPLIB instances orders of magnitude larger than existing hybrid-quantum methods}
+      \resumeItemListEnd
 
     \resumeSubheading
       {IBM Research}{May 2024 -- August 2024}
@@ -146,9 +137,8 @@
       \resumeItemListStart
         \resumeItem{Developed key components for IBM's Rust-based hardware-level production Quantum Assembly (QASM) quantum compiler that improved speed by 7x and memory usage by 3.5x}
         \resumeItem{Spearheaded the development of a 85x faster data parsing and caching API for quantum hardware configuration information and waveform data through binary (de)serialization}
-        % \resumeItem{Created a 100x faster interface for storing and accessing cached configuration information through binary (de)serialization}
         \resumeItem{Implemented the compiler's intermediate representations (IRs) at the pulse calibration level}
-        \resumeItem{Added additional support for QASM parsing, enabling extensibility and more language coverage}
+        % \resumeItem{Added additional support for QASM parsing, enabling extensibility and more language coverage}
       \resumeItemListEnd
 
     \resumeSubheading
@@ -159,35 +149,7 @@
         \resumeItem{Leveraged the Python Abstract Syntax Tree (AST) to build a high level compiler from custom language to LLVM IR that enables conditional branching on quantum measurements and dynamic circuits}
         \resumeItem{Added constant folding, constant propagation, method inlining and loop unrolling optimizations which reduced output QIR by 15\% for faster compilation}
       \resumeItemListEnd
-      
-% -----------Multiple Positions Heading-----------
-    % \resumeSubSubheading
-    % {Software Engineer I}{Oct 2014 - Sep 2016}
-    % \resumeItemListStart
-    %     \resumeItem{Apache Beam}
-    %      {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
-    % \resumeItemListEnd
-    % \resumeSubHeadingListEnd
-% -------------------------------------------
-
-    % \resumeSubheading
-    %   {STEMchats}{Sep. 2020 -- Jan 2022}
-    %   {Software Engineering Intern}{Remote}
-    %   \resumeItemListStart
-    %     % \resumeItem{Built a website using Javascript, HTML, CSS, Node.js, Firebase, and Bootstrap to host tech newsletters}
-    %     \resumeItem{Hosted weekly tech newsletters by building a website with Javascript, Node.js, Firebase, and Bootstrap}
-    %     \resumeItem{Spearheaded the design of the main page, database, and article display systems for the newsletter search pages}
-    %     \resumeItem{Delivered a 470\% boost in readership over the first 5 months of publishing the website compared to mailing list}
-    % \resumeItemListEnd
-
-    % \resumeSubheading
-    %   {Lead Software Engineer}{August 2019 -- May 2022}
-    %   {First Robotics Team 2234}{Newtown Square, PA}
-    %   \resumeItemListStart
-    %     \resumeItem{Developed a variety of complex drivetrain code (Swerve Drive, Tank, H Drive) in Java}
-    %     \resumeItem{Utilized GRIP and regression calculations for precise autonomous ball launchers with an 80+\% accuracy rate}
-    %     % \resumeItem{Mentored junior programming team and taught them Java, WPILib, GRIP, and Git best practices}
-    %   \resumeItemListEnd
+    
 
   \resumeSubHeadingListEnd
 
@@ -200,61 +162,30 @@
           \resumeItemListStart
             \resumeItem{Aided in the design and implementation of Qwerty, a quantum programming language that moves away from gate-based quantum computing and towards higher abstractions}
             \resumeItem{Engineered custom ASTs and optimization passes for the Qwerty compiler using the Python AST, C++, and custom MLIR dialects and rewrite passes}
-            \resumeItem{Placed 2nd at the CGO Student Research Competition for \textbf{“Type Inference for Qwerty”} by implementing Hindley Milner type inference via a Rust-based AST}
-            \resumeItem{Austin J. Adams, Sharjeel Khan, \textbf{Arjun Bhamra}, Ryan Abusaada, Anthony M. Cabrera, Cameron Hoechst, Jeffrey S. Young, and Thomas M. Conte. \textbf{“ASDF: A Compiler for Qwerty, a Basis-Oriented Quantum Programming Language.”} \textit{2025 IEEE/ACM International Symposium on Code Generation and Optimization (CGO ‘25).}}
+            \resumeItem{Placed 2nd at the CGO Student Research Competition for \textbf{"Type Inference for Qwerty"} by implementing Hindley Milner type inference via a Rust-based AST}
+            \resumeItem{Austin J. Adams, Sharjeel Khan, \textbf{Arjun S. Bhamra}, Ryan R. Abusaada, Jeffrey S. Young, and Thomas M. Conte. \textbf{“Qwerty: A Basis-Oriented Quantum Programming Language”} \textit{IEEE International Conference on Quantum Computing and Engineering (QCE25).}}
+            \resumeItem{Austin J. Adams, Sharjeel Khan, \textbf{Arjun Bhamra}, Ryan Abusaada, Anthony M. Cabrera, Cameron Hoechst, Jeffrey S. Young, and Thomas M. Conte. \textbf{“ASDF: A Compiler for Qwerty, a Basis-Oriented Quantum Programming Language”} \textit{2025 IEEE/ACM International Symposium on Code Generation and Optimization (CGO ‘25).}}
             
           \resumeItemListEnd
 
-    % \resumeSubheading
-    %   {Quantum Algorithms Researcher}{Aug 2022 -- July 2023}
-    %   {Georgia Tech Computational Physics Lab - Dr. Spencer Bryngelson}{Atlanta, GA}
-    %   \resumeItemListStart
-    %     \resumeItem{Created two variational quantum algorithms (VQAs) for solving PDEs with Qiskit, etc.}
-    %     \resumeItem{Expanded upon Variational Quantum Linear Solver (VQLS) and VQE for fluid dynamics applications}
-        
-    %   \resumeItemListEnd
-
-    % \resumeSubheading
-    %   {Quantum Machine Learning Researcher}{August 2020 -- May 2022}
-    %   {Aspiring Scholars Directed Research Program (ASDRP)}{Newtown Square, PA}
-    %   \resumeItemListStart
-    %     \resumeItem{Utilized Pennylane and PyTorch to design a novel Hybrid Quantum-Classical Generative Adversarial Network (QGAN) that outputs new chemically stable molecules}
-    %     \resumeItem{Published in the \href{https://emerginginvestigators.org/articles/hybrid-quantum-classical-generative-adversarial-network-for-synthesizing-chemically-feasible-molecules/pdf}{\underline{Journal of Emerging Investigators}}}
-        
-    %   \resumeItemListEnd
-
   \resumeSubHeadingListEnd
 
-%-----------LEADERSHIP---------
-% \section{Leadership}
-%     \resumeSubHeadingListStart
-%       \resumeProjectHeading
-%           {\textbf{Georgia Tech Esports} $|$ \emph{Co-President}}{}
-%           \resumeItemListStart
-%             \resumeItem{Managed casual and competitive scenes for 15+ games under the GT professional banner}
-%             \resumeItem{Aided in implementing a long lasting, effective organizational structure for future generations}
-%           \resumeItemListEnd
-%     \resumeSubHeadingListEnd
 
 %-----------PROJECTS-----------
 \section{Projects}
     \resumeSubHeadingListStart
-          % \resumeProjectHeading{\textbf{Quill: Quantum Programming from the Middle Ages} $|$ \emph{Rust}}{}
-          % \resumeItemListStart
-          %   \resumeItem{Created a quantum programming language using Shakespearean syntax, with a streamlined parsing and AST generation process through the Pest crate }
-          %   \resumeItem{Laid out a plan to implement peephole optimization and code generation through QIR}
-          % \resumeItemListEnd
+
      \resumeProjectHeading{\textbf{Open Source Contributor to Quantum repositories} $|$ \emph{Rust, Python, unittest, Git}}{}
           \resumeItemListStart
-            \resumeItem{Added necessary quality of life changes for the IBM Rustworkx repository, a Rust-based Python graph library used in Qiskit}
+            \resumeItem{Added necessary quality of life changes for the IBM Rustworkx repository, a Rust-based Python graph library}
             \resumeItem{Added major feature support for the IBM OpenQASM 3 Parser, a performant parser based on rust-analyzer}
-            \resumeItem{Provided bug fixes and feature improvements for Xanadu's JIT quantum compiler, Catalyst}
+            % \resumeItem{Provided bug fixes and feature improvements for Xanadu's JIT quantum compiler, Catalyst}
           \resumeItemListEnd
-          \resumeProjectHeading{\textbf{rs\_micrograd: Mini Automatic Differentiation Engine} $|$ \emph{Rust}}{}
-          \resumeItemListStart
-            \resumeItem{Designed an auto-diff engine with Rust based on Andrej Karpathy's Python micrograd engine}
-            \resumeItem{Implemented expression graph-based gradient calculations for efficient neural network backpropagation}
-          \resumeItemListEnd
+          % \resumeProjectHeading{\textbf{rs\_micrograd: Mini Automatic Differentiation Engine} $|$ \emph{Rust}}{}
+          % \resumeItemListStart
+          %   \resumeItem{Designed an auto-diff engine with Rust based on Andrej Karpathy's Python micrograd engine}
+          %   \resumeItem{Implemented expression graph-based gradient calculations for efficient neural network backpropagation}
+          % \resumeItemListEnd
     \resumeSubHeadingListEnd
 
 %-----------PROGRAMMING SKILLS-----------
@@ -263,22 +194,9 @@
     \small{\item{
      \textbf{Languages}{: Rust, Python, Java, C, C++, LLVM, MLIR, JavaScript, LateX} \\
      % \textbf{Frameworks}{: React, Node.js, Bootstrap} \\
-     \textbf{Developer Tools}{: Git, Gitlab, Google Cloud Platform, BitBucket, Atlassian Tools, Bazel} \\
+     % \textbf{Developer Tools}{: Git, Gitlab, Google Cloud Platform, BitBucket, Atlassian Tools, Bazel} \\
      \textbf{Libraries}{: pandas, NumPy, Matplotlib, unittest, Qiskit, Pennylane, PyTorch, Scikit-learn, Python AST, functools}
     }}
  \end{itemize}
- 
- %-----------REFERENCES----------\ 
-% \section{References}
-%  \begin{itemize}[leftmargin=0.15in, label={}]
-%     \small{\item{\textbf{Dr. Spencer Bryngelson - Georgia Tech Computational Physics Lab} \par
-%     shb@gatech.edu - (734) 674-5501}}
-%     \small{\item{\textbf{Dr. Bryan Gard - Georgia Tech Research Institute} \par
-%     Bryan.Gard@gtri.gatech.edu - (225) 324-3914}}
-%     \small{\item{\textbf{Brady Werkheiser - Alchemy} \par
-%     brady@alchemy.com - (215) 264-3202}}
-%  \end{itemize}
-
-
-%-------------------------------------------
 \end{document}
+end{document}
