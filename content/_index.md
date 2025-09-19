@@ -33,7 +33,7 @@ Austin J. Adams, Sharjeel Khan, **Arjun S. Bhamra**, Ryan R. Abusaada, Travis S.
 ### Work
 I've spent most of my (limited) work life in the space of quantum compilers; in the summer of 2023, I worked @ [Quantinuum](https://www.quantinuum.com/), where I designed a domain specific language for Repeat-Until-Success circuits. The following summer, I worked @ [IBM](https://www.ibm.com/quantum) on rewriting their hardware Quantum Assembly compiler in [Rust](https://www.rust-lang.org/rust). This past summer (2025), I returned to IBM to work on quantum algorithms for combinatorial optimization problems.
 
-I also co-chair [dependently-typed](https://dtyped.netlify.app/), the compilers and programming languages club @ GT.
+I also co-chair [dependently-typed](https://dtyped.netlify.app/), the compilers and programming languages club @ GT. As a part of the club, I have given talks on MLIR, [compiler optimizations for data locality](compiler_opt_for_data_locality.pdf), and [program synthesis](program_synthesis.pdf).
 
 A more complete resume can be found [here](resume.pdf).
 
