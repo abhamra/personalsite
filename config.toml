@@ -10,6 +10,7 @@ default_language = "en"
 taxonomies = [{name = "tags"}]
 
 generate_feeds = true
+feed_filenames = ["atom.xml", "rss.xml"]
 author = "Arjun Bhamra"
 
 # Whether to build a search index to be used later on by a JavaScript library
@@ -42,6 +43,5 @@ display_author = true
 header_nav = [
   { name_en = "<home", url = "/" },
   { name_en = "|resume|", url = "/resume.pdf" },
-  # { name_en = "/journal/", url = "/journal" },
   { name_en = "blog>", url = "/blog" },
 ]
