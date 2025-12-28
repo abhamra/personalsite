@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1762816154.64312 "resume.tex" "resume.pdf" "resume" 1762816155.53038 0
+["pdflatex"] 1766937704.48341 "resume.tex" "resume.pdf" "resume" 1766937705.4084 0
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -23,6 +23,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb" 1248133631 32001 6aeea3afe875097b1eb0da29acd61e28 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1248133631 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
@@ -84,9 +85,9 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1737590400 40900 887e0dc8cac988a9e9c574af364cf837 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1762816124.72482 4547224 5cf1c14d6ee63f23cc6525ae387ed2c9 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1762815896 7759950 0e07a78adba8e6f1b215f6ae7401a624 ""
-  "resume.aux" 1762816155.41204 1170 4f37bdd0a126fb0143e73cc8024565fa "pdflatex"
-  "resume.out" 1762816155.41304 473 037573c7a87dd9fdecc0ef1431ddbaf9 "pdflatex"
-  "resume.tex" 1762816153.89103 8946 0c3c89196f906f5761243af1888b3230 ""
+  "resume.aux" 1766937705.2995 1057 8c47ae9b34d774542e255e0871913ec6 "pdflatex"
+  "resume.out" 1766937705.3005 347 1afe0ffd3dcd4ba309d0d9f0aa1c03d0 "pdflatex"
+  "resume.tex" 1766937703.05749 9412 adfaa9fabe14718e4a6b2a5554c6c769 ""
   (generated)
   "resume.aux"
   "resume.log"
