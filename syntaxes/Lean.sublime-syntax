@@ -66,9 +66,9 @@ contexts:
     - include: operator
     - include: attribute
     - include: constant
+    - include: typeclass
     - include: type
     - include: tactic
-    - include: definition-name
 
   keyword:
     - match: \b(?<!\.)(Prop|Type|Sort)\s+({{name}}(\.{{name}})*)
@@ -126,7 +126,6 @@ contexts:
       scope: keyword.control.lean
     - match: \b(?<!\.)(calc|have|this|suffices|show|by|in|at|exists|assume|from|obtain|restate_axiom|run_cmd|set_option|haveI)(?!\.)\b
       scope: keyword.other.lean
-    # TODO: actually make this scope below work as intended ?
     - match: '\b(?<!\.)(inductive|coinductive|structure|theorem|axiom|axioms|abbreviation|lemma|definition|def|instance|class|constant)\b\s+(\{[^}]*\})?'
       captures:
         1: keyword.declaration.definitioncommand.lean
@@ -192,8 +191,12 @@ contexts:
         3: storage.modifier.attribute.lean
         4: punctuation.section.braces.end.lean
 
+  typeclass:
+    - match: \b(Fintype|DecidableEq|DecidableRel|Subsingleton|Unique|Inhabited|Coee|OfNat|LawfulMonad)\b
+      scope: support.typeclass.lean
+
   type:
-    - match: \b(Bool|Nat|Int|Float|Array|List|Char|String|Option|Thunk|Task|Thread)\b
+    - match: \b(Bool|Nat|Int|Float|Array|List|Char|String|Option|Thunk|Task|Thread|SimpleGraph|Finset)\b
       scope: storage.type.builtin.lean
     - match: \b(And|Context|Empty|Eq|Except|Exception|False|Fin|HEq|MacroScopesView|Methods|MProd|Name|Or|ParserDescr|PEmpty|PLift|PProd|Prod|PUnit|Result|SepArray|SourceInfo|State|String\.Pos|Substring|Subtype|Syntax|True|TSepArray|TSyntax|UInt16|UInt32|UInt64|UInt8|ULift|USize)\b
       scope: storage.type.prelude.lean
@@ -201,7 +204,7 @@ contexts:
       scope: support.type.mathlib.lean
 
   tactic:
-    - match: \b(abstract|ac_refl|ac_reflexivity|admit|all_goals|any_goals|apply|apply_auto_param|apply_instance|apply_opt_param|apply_with|assume|assumption|by_cases|by_contra|by_contradiction|case|cases|cc|change|clear|constructor|contradiction|dedup|delta|destruct|done|dsimp|dunfold|eapply|econstructor|erewrite|erw|exact|exacts|exfalso|existsi|fail_if_success|fapply|from|generalize|guard_hyp|guard_target|have|induction|injection|injections|intro|intros|introv|left|let|refine|refl|reflexivity|rename|repeat|revert|rewrite|right|rw|rwa|show|simp|simp_intros|skip|solve1|specialize|split|subst|success_if_fail|suffices|symmetry|trace|trace_simp_set|trace_state|transitivity|trivial|try|type_check|unfold|unfold1|unfold_projs)\b
+    - match: \b(abstract|ac_refl|ac_reflexivity|admit|all_goals|any_goals|apply|apply_auto_param|apply_instance|apply_opt_param|apply_with|assume|assumption|by_cases|by_contra|by_contradiction|case|cases|cc|change|clear|constructor|contradiction|dedup|delta|destruct|done|dsimp|dunfold|eapply|econstructor|erewrite|erw|exact|exacts|exfalso|existsi|fail_if_success|fapply|from|generalize|guard_hyp|guard_target|have|induction|injection|injections|intro|intros|introv|left|let|refine|refl|reflexivity|rename|repeat|revert|rewrite|right|rw|rwa|show|simp|only|simp_intros|skip|solve1|specialize|split|subst|success_if_fail|suffices|symmetry|trace|trace_simp_set|trace_state|transitivity|trivial|try|type_check|unfold|unfold1|unfold_projs)\b
       scope: support.function.tactic.builtin.lean
     - match: \b(abel|abel1|abel_nf|abstract|absurd|ac_change|ac_mono|ac_refl|ac_rfl|admit|aesop|aesop_cases|aesop_cat|aesop_cat_nonterminal|aesop_destruct_products|aesop_split_hyps|aesop_subst|aesop_unfold|all_goals|any_goals|apply|apply_assumption|apply_auto_param|apply_congr|apply_ext_lemma|apply_fun|apply_instance|apply_mod_cast|apply_opt_param|apply_rules|apply_with|array_get_dec|assoc_rewrite|assume|assumption|assumption'|assumption_mod_cast|async|aux_group₁|aux_group₂|bddDefault|beta_reduce|bicategory_coherence|bitwise_assoc_tac|borelize|by_cases|by_contra|by_contra'|by_contradiction|calc|cancel_denoms|case|cases|cases_matching|cases_type|casesm|category_theory.elementwise_of|category_theory.reassoc_of|cc|change|change'|checkpoint|choose|clarify|classical|clear|clear'|clear_|clear_aux_decl|clear_except|clear_value|coherence|comp_val|compareOfLessAndEq_rfl|compute_degree|compute_degree_le|congr|congr'|congrm|constructor|constructorm|continuity|continuity'|contradiction|contrapose|conv|conv_lhs|conv_rhs|convert|convert_to|dbg_trace|dec_trivial|decide|decreasing_tactic|decreasing_trivial|decreasing_with|delta|destruct|discrete_cases|done|dsimp|dunfold|eapply|econstructor|elementwise|elide|eq_refl|equiv_rw|equiv_rw_type|erewrite|erw|eta_expand|eta_reduce|eta_struct|exact|exact_mod_cast|exacts|exfalso|exists|existsi|ext|ext1|extract_goal|extract_lets|fail|fail_if_no_progress|fail_if_success|fapply|fconstructor|field_simp|filter_upwards|fin_cases|find|finish|first|focus|frac_tac|from|fsplit|funext|gcongr|gcongr_discharger|generalize|generalize'|generalize_hyp|generalize_proofs|generalizes|get_elem_tactic|get_elem_tactic_trivial|group|guard_expr|guard_goal_nums|guard_hyp|guard_hyp_nums|guard_target|guard_target'|h_generalize|have|haveI|hint|induction|infer_instance|infer_param|inhabit|injection|injections|injections_and_clear|interval_cases|intro|intros|introv|isBoundedDefault|itauto|iterate|left|let|letI|library_search|lift|lift_lets|liftable_prefixes|linarith|linear_combination|linear_combination2|map_tacs|mapply|match|match_target|measurability|measurability'|mfld_set_tac|mod_cases|mono|monoidal_coherence|move_add|move_mul|native_decide|next|nlinarith|noncomm_ring|nontriviality|norm_cast|norm_cast0|norm_fin|norm_num|norm_num1|nth_rewrite|nth_rewrite_lhs|nth_rewrite_rhs|nth_rw|observe|obtain|omega|on_goal|open|pi_instance|pick_goal|polyrith|positivity|pretty_cases|pure_coherence|push_cast|push_neg|qify|rcases|rcongr|recover|reduce|refine|refine_lift|refine_struct|refl|reflexivity|rel|rename|rename_bvar|rename_i|rename_var|repeat|repeat1|replace|revert|revert_after|revert_deps|revert_target_deps|rewrite|rewrite_search|rfl|right|ring|ring1|ring1_nf|ring2|ring_exp|ring_nf|rintro|rotate|rotate_left|rotate_right|rsuffices|rsufficesI|run_tac|rw|rw_mod_cast|rwa|safe|save|scc|set|set_option|show|show_term|simp|simp_all|simp_all_arith|simp_arith|simp_intro|simp_intros|simp_result|simp_rw|simp_wf|simpa|sizeOf_list_dec|skip|sleep|slice|slice_lhs|slice_rhs|slim_check|smul_tac|solve|solve1|solve_by_elim|sorry|specialize|split|split_ands|split_ifs|squeeze_dsimp|squeeze_scope|squeeze_simp|squeeze_simpa|stop|subst|subst'|subst_eqs|subst_vars|substs|subtype_instance|success_if_fail|success_if_fail_with_msg|suffices|suggest|swap|swap_var|symm|symm_saturate|symmetry|tauto|tautology|tfae|tfae_finish|tfae_have|tidy|trace|trace_simp_set|trace_state|trans|transitivity|transport|triv|trivial|trivial'|trunc_cases|try|type_check|unelide|unfold|unfold1|unfold_cases|unfold_coes|unfold_let|unfold_projs|unhygienic|unify_equations|unit_interval|unreachable|use|use_discharger|use_finite_instance|whisker_simps|whnf|with_cases|with_panel_widgets|with_reducible|with_reducible_and_instances|with_unfolding_all|wlog|zify)\b
       scope: support.function.tactic.mathlib.lean
