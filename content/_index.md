@@ -35,7 +35,7 @@ I've spent most of my (limited) work life in the space of quantum compilers; in 
 
 I also co-chair [dependently-typed](https://dtyped.netlify.app/), the compilers and programming languages club @ GT. As a part of the club, I have given talks on MLIR, [compiler optimizations for data locality](compiler_opt_for_data_locality.pdf), and [program synthesis](program_synthesis.pdf).
 
-A more complete resume can be found [here](resume.pdf).
+A more complete resume can be found [here](resume.pdf), as well as my [CV](cv.pdf).
 
 ---
 ### What do I do?
