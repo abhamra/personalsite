@@ -33,7 +33,7 @@ Having encountered this simple and elegant algorithm + proof in my algorithms co
 
 ### Structures
 The first step is always representing our key structures. Lean already has a `SimpleGraph`, so all we need to do is design a structure to store our `Cut`:
-```haskell
+```Lean
 -- Given some graph G = (V, E)
 -- a cut is defined as a set of edges C ⊆ E such that for each edge c = (u, v) ∈ C,
 -- we have that u ∈ V₁ and v ∈ V₂, for V₁ ⊕ V₂ (disjoint union) = V
@@ -50,7 +50,7 @@ We also create some helper functions, namely for:
 1. Creating cuts from an assignment, a mapping from vertices to booleans (true in A, false in B)
 2. `size` of the cut
 3. Whether a given edge is in the cut at all.
-```haskell
+```Lean
 -- determine whether an edge is in the cut
 def edgeInCut {V : Type*} [DecidableEq V] [Fintype V] {G : SimpleGraph V}
   (C : Cut V G) (e : Sym2 V) : Bool :=
@@ -82,7 +82,7 @@ Generally, we also use the idea of an assignment function quite a bit, i.e. some
 From here on out, I'll skimp on some of the proof details and go over more of the overarching approaches for some of my lemmas, since that seems like a more economical use of time and article space.
 
 First, we finalize our randomized cut instances and the edge containment indicator function, which basically represents our random variable `Χₑ` from the proof.
-```haskell
+```Lean
 def randomizedMaxCut {V : Type*} [DecidableEq V] [Fintype V]
     {G : SimpleGraph V} : (V → Bool) → Cut V G :=
   fun assignment => Cut.ofAssignment (G := G) assignment
@@ -97,7 +97,7 @@ def edgeIndicator {V : Type*} [DecidableEq V] [Fintype V] {G : SimpleGraph V}
 Finally, in the order I proved them, here are the lemmas and theorems!
 
 1. `cut_size_eq_sum_indicators`: `|C| = ∑ χₑ ∀ e ∈ E`
-```haskell
+```Lean
 lemma cut_size_eq_sum_indicators {V : Type*} [DecidableEq V] [Fintype V] (G : SimpleGraph V)
   [DecidableRel G.Adj] (assignment : V -> Bool) :
     (Cut.ofAssignment (G := G) assignment).size =
@@ -106,7 +106,7 @@ lemma cut_size_eq_sum_indicators {V : Type*} [DecidableEq V] [Fintype V] (G : Si
 Here, we first unfold our relevant definitions. Then, we convert to using summation for both sides, and finally we simplify and show that our sets are equal; if the sets are equal, their cardinalities must be equal as well!
 
 2. `count_diff_assignments`: half of the 2^N possible assignments have `f u ≠ f v`
-```haskell
+```Lean
 lemma count_diff_assignments {V : Type*} [Fintype V] [DecidableEq V]
   (u v : V) (huv : u ≠ v) : 2 * (Finset.univ.filter (fun f : V -> Bool => f u ≠ f v)).card =
     Fintype.card (V -> Bool) := by ...
@@ -114,7 +114,7 @@ lemma count_diff_assignments {V : Type*} [Fintype V] [DecidableEq V]
 This proof is a behemoth of sorts, unexpectedly. The key thread here is to codify the fact that `f u ≠ f v` is half the space by creating a bijection and showing it is an involution (its own inverse). Then, if we know that the sets `f u ≠ f v` and `f u = f v` have the same cardinality, and that they equal `2^|V|`, we get our result.
 
 3. `prob_edge_in_cut`: `Pr[e ∈ C] = 1/2`
-```haskell
+```Lean
 lemma prob_edge_in_cut {V : Type*} [DecidableEq V] [Fintype V] (G : SimpleGraph V)
   (e : Sym2 V) (h : ¬e.IsDiag) :
   (∑ assignment : V -> Bool, (edgeIndicator (G := G) (randomizedMaxCut assignment) e : ℝ)) / 
@@ -123,7 +123,7 @@ lemma prob_edge_in_cut {V : Type*} [DecidableEq V] [Fintype V] (G : SimpleGraph 
 For this proof we use induction on the edges to extract the vertices, then claim that the sum of the indicators when `u ≠ v` is equal to the cardinality of the `Finset` when `f u ≠ f v` (the count of "good" assignments, when not in same vertex set of partition). This, plus our result from the `count_diff_assignments` (counting lemma) plus some tiny polishing steps gives us our result.
 
 4. `expected_cut_size`: `E[|C|] = |E|/2` (the important one!)
-```haskell
+```Lean
 theorem expected_cut_size {V : Type*} [DecidableEq V] [Fintype V] (G : SimpleGraph V)
   [DecidableRel G.Adj] :
     (∑ assignment : V -> Bool,
@@ -135,7 +135,7 @@ This proof begins with our original expectation statement and chains together ou
 ---
 #### A brief interlude: finding *the* Max Cut
 In order to wrap this up and prove things with respect to the actual maximum cut, we need to find a way to represent this. Today I learned about the `Finset.univ.sup`, meaning "supremum". A supremum is the smallest quantity greater than or equal to each element of a given (sub)set. In effect, we iterate over all `Finset`s, create `Cut`s based off of each possible assignment, and pick the best/max one!
-```haskell
+```Lean
 def maxCutValue {V : Type*} [DecidableEq V] [Fintype V] (G : SimpleGraph V)
   [DecidableRel G.Adj] : ℕ :=
   Finset.univ.sup (fun f : V -> Bool => (Cut.ofAssignment (G := G) f).size)
@@ -145,7 +145,7 @@ Back to the proofs.
 ---
 
 5. `maxCut_le_edges`: Maximum cut is at most `|E|`. This proof is short enough to include in its entirety:
-```haskell
+```Lean
 lemma maxCut_le_edges {V : Type*} [Fintype V] [DecidableEq V]
     (G : SimpleGraph V) [DecidableRel G.Adj] :
     maxCutValue G ≤ G.edgeFinset.card := by
@@ -162,7 +162,7 @@ lemma maxCut_le_edges {V : Type*} [Fintype V] [DecidableEq V]
 ```
 
 6. `rand_approx_guarantee`: `E[|C|] >= |maxCut|/2`. This proof is also short, because it stands tall on the backs of giants (the others).
-```haskell
+```Lean
 theorem rand_approx_guarantee {V : Type*} [DecidableEq V] [Fintype V]
   (G : SimpleGraph V) [DecidableRel G.Adj] :
     (∑ assignment : V -> Bool,
