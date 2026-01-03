@@ -1,57 +1,41 @@
+{% import "macros/macros.html" as post_macros %}
+
 <!DOCTYPE html>
-<html lang="{% if page %}{{ page.lang }}{% else %}{{ config.default_language }}{% endif %}">
-<head>
-    {% include "head.html" %}
-    {% block rss %}
-      <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml", trailing_slash=false) }}">
-    {% endblock %}
-</head>
-<!-- <link rel="stylesheet" type="text/css" href="{{ get_url(path='css/custom.css', trailing_slash=false) | safe }}"/> -->
-<style>
-pre {
-  padding: 1rem;
-  overflow: auto !important;
-  max-height: unset !important;
-}
-/* The line numbers already provide some kind of left/right padding */
-pre[data-linenos] {
-  padding: 1rem 0;
-}
-pre table td {
-  padding: 0;
-}
-/* The line number cells */
-pre table td:nth-of-type(1) {
-  text-align: center;
-  user-select: none;
-}
-pre mark {
-  /* If you want your highlights to take the full width */
-  display: block !important;
-  /* The default background colour of a mark is bright yellow */
-  background-color: rgba(254, 252, 232, 0.9);
-}
-pre table {
-  width: 100%;
-  border-collapse: collapse;
-}
+<html lang="en" class="dark light">
 
-code {
-    background-color:#282828 !important;
-    color:#fdf4c1aa !important;
-}
+    {% include "partials/header.html" %}
 
-</style>
-<body>
-      <header>
-          {% include "header.html" %}
-      </header>
-      <main>
-          {% block content %}
-          {% endblock content %}
-      </main>
-      <footer>
-          {% include "footer.html" %}
-      </footer>
-</body>
+    <body>
+        <div class="left-content">
+            {% block left_content %}
+            {% endblock left_content %}
+        </div>
+
+        <div class="content">
+            {% include "partials/nav.html" %}
+
+            {# Post page is the default #}
+            {% block main_content %}
+                Nothing here?!
+            {% endblock main_content %}
+
+            {% if page.extra.comment is defined %}
+                {% set show_comment = page.extra.comment %}
+            {% else %}
+                {% set show_comment = false %}
+            {% endif %}
+
+            {% if show_comment %}
+                <div class="giscus">
+                </div>
+                {% include "_giscus_script.html" %}
+            {% endif %}
+        </div>
+
+        <div class="right-content">
+            {% block right_content %}
+            {% endblock right_content %}
+        </div>
+    </body>
+
 </html>

@@ -1,17 +1,19 @@
 +++
+template = "homepage.html"
 +++
 
 ## Hi, I'm Arjun!
 
-<img src="https://github.com/abhamra/personalsite/blob/master/content/Images/headshot.jpg?raw=true" alt="Headshot of me!" width="190" align="right" />
+<div>
+  <img src="https://github.com/abhamra/personalsite/blob/master/content/Images/headshot.jpg?raw=true" alt="Headshot of me!" width="180" style="float: right; margin-left: 20px;" />
+  
+  I'm a 4th year CS major @ Georgia Tech concentrating in [Systems Architecture](https://www.cc.gatech.edu/academics/threads/systems-architecture) and [Theory](https://www.cc.gatech.edu/academics/threads/theory). I'm currently learning about quantum computing, compilers, and PL theory!
 
-I'm a 4th year CS major @ Georgia Tech concentrating in [Systems Architecture](https://www.cc.gatech.edu/academics/threads/systems-architecture) and [Theory](https://www.cc.gatech.edu/academics/threads/theory). I'm currently learning about quantum computing, compilers, and PL theory!
-<!---->
-<!-- You can contact me @ [arjun.bhamra25@gmail.com](mailto:arjun.bhamra25@gmail.com), [@abhamra](https://github.com/abhamra) (Github), and [arjun-bhamra](https://www.linkedin.com/in/arjun-bhamra/) (LinkedIn). -->
-You can contact me @
-- arjun [dot] bhamra25 [at] gmail.com
-- [@abhamra](https://github.com/abhamra) on Github
-- [arjun-bhamra](https://www.linkedin.com/in/arjun-bhamra/) on LinkedIn
+  You can contact me @
+  - arjun [dot] bhamra25 [at] gmail.com
+  - [@abhamra](https://github.com/abhamra) on Github
+  - [arjun-bhamra](https://www.linkedin.com/in/arjun-bhamra/) on LinkedIn
+</div>
 
 ---
 
@@ -44,11 +46,12 @@ I read somewhere recently that when asked about what someone does, the first ans
 - Music, particularly Jazz and Funk, although I'll listen to basically anything that isn't country
     - [A favorite playlist](https://open.spotify.com/playlist/6Cb0nIeiLKU5iLzKOTE2V1?si=7de1db6e6d134ff3)
 - Anime and animated shows (FMAB, TLOVM, A:TLA, Arcane, and Blue Eye Samurai are some standouts!)
-- FPS Games (currently playing Marvel Rivals and Battlefield 1/5)
+- FPS Games (currently playing The Finals, Overwatch, and Battlefield 6)
 - DND (we try not to minmax quite hard, here)
-- Creative Writing (*work in progress*)
+- Creative Writing (*work in [progress](/tags/writings/)*)
 - My [dotfiles](https://github.com/abhamra/dotfiles) setup
 
-### And now, a nice quote
+---
+
 > "Experience becoming [...] to make your soul grow"
 > - Kurt Vonnegut

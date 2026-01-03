@@ -1,25 +1,45 @@
 {% extends "base.html" %}
 
-{% block content %}
-<h1>{{ section.title }}</h1>
+{% block main_content %}
+    {% if section.extra.section_path -%}
+        {% set section = get_section(path=section.extra.section_path) %}
+    {% endif -%}
 
-{{ section.content | safe }}
+    {% block title %}
+        {{ post_macros::page_header(title=section.title) }}
+    {% endblock title %}
 
-{% if paginator %}
-{% set pages = paginator.pages %}
-{% else %}
-{% set pages = section.pages %}
-{% endif %}
+    {% if section.content %}
+        <div class="section-content">
+            {{ section.content | safe }}
+        </div>
+    {% endif %}
 
-<ul class="title-list">
-{% for page in pages %}
-  <li>
-    <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
-  </li>
-{% endfor %}
-</ul>
+    {% block post_list %}
+        <main class="post-list">
+            {%- if paginator %}
+                {%- set show_pages = paginator.pages -%}
+            {% else %}
+                {%- set show_pages = section.pages -%}
+            {% endif -%}
 
-{% if paginator %}
-<div class="accent-data">{% if paginator.previous %}<a href="{{ paginator.first }}">⥶</a> &nbsp <a href="{{ paginator.previous }}"><</a>{% endif %} &nbsp {{ paginator.current_index }} / {{ paginator.number_pagers }} &nbsp {% if paginator.next %}<a href="{{ paginator.next }}">></a> &nbsp <a href="{{ paginator.last }}">⥸</a>{% endif %}</div>
-{% endif %}
-{% endblock content %}
+            {{ post_macros::list_posts(pages=show_pages) }}
+        </main>
+    {% endblock post_list %}
+
+    {% if paginator %}
+        <ul class="pagination">
+            {% if paginator.previous %}
+                <span class="page-item page-prev">
+                    <a href={{ paginator.previous }} class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev</span></a>
+                </span>
+            {% endif %}
+
+            {% if paginator.next %}
+                <span class="page-item page-next">
+                    <a href={{ paginator.next }} class="page-link" aria-label="Next"><span aria-hidden="true">Next →</span></a>
+                </span>
+            {% endif %}
+        </ul>
+    {% endif %}
+{% endblock main_content %}
