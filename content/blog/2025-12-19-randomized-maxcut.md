@@ -2,6 +2,9 @@
 title = "Proving bounds for the Randomized MaxCut Approximation algorithm in Lean4"
 [taxonomies]
   tags = ["lean", "algorithms"]
+
+[extra]
+comment = true
 +++
 
 For a given graph `G = (V, E)`, a cut `C` is a set of edges such that there is a partition `V = (A, B)` where all edges `e ∈ C` have one vertex in `A` and the other in `B`.

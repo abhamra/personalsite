@@ -1,0 +1,7 @@
+<footer class="site-footer">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <p style="margin: 0;">&copy; {{ now() | date(format="%Y") }} Arjun Bhamra</p>
+        <p style="margin: 0;">
+            <a href="{{ config.base_url }}/atom.xml" class="link">Atom</a> &&
+            <a href="{{ config.base_url }}/rss.xml" class="link">RSS</a>        </p>
+    </div>
