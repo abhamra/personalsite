@@ -45,7 +45,9 @@ display_author = true
 toc = true
 fancy_code = true
 dynamic_note = true
-favicon = ""
+mathjax = true
+mathjax_dollar_inline_enable = true
+comment = true
 
 menu = [
   { name = "home ~", url = "/", weight = 1 },
