@@ -45,6 +45,7 @@ display_author = true
 toc = true
 fancy_code = true
 dynamic_note = true
+favicon = ""
 
 menu = [
   { name = "home ~", url = "/", weight = 1 },
