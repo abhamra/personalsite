@@ -48,6 +48,7 @@ dynamic_note = true
 mathjax = true
 mathjax_dollar_inline_enable = true
 comment = true
+favicon = "/icons/favicon.ico"
 
 menu = [
   { name = "home ~", url = "/", weight = 1 },
