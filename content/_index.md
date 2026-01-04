@@ -2,7 +2,7 @@
 template = "homepage.html"
 +++
 
-## Hi, I'm Arjun!
+# Hi, I'm Arjun!
 
 <div>
   <img src="https://github.com/abhamra/personalsite/blob/master/content/Images/headshot.jpg?raw=true" alt="Headshot of me!" width="180" style="float: right; margin-left: 20px;" />
@@ -17,12 +17,12 @@ template = "homepage.html"
 
 ---
 
-### Research
-My research interests center around compilation and programming languages, especially as they relate to quantum computing. Broadly, I want to design software that is easy to use and lifts as much weight off the shoulders of developers. My prior research has been in enabling this via Qwerty, a domain-specific language for writing quantum programs. More recently, I have been exploring concepts in program synthesis and search-based compiler techniques for DSLs. Always something new to learn!
+## Research
+My research interests center around compilation and programming languages, especially as they relate to quantum computing. Broadly, I want to design software that is easy to use and lifts as much weight off the shoulders of developers. My prior research has been in enabling this via Qwerty, a domain-specific language for writing quantum programs. More recently, I have been exploring concepts in formal verification for a variety of cases. Always something new to learn!
 
 I work @ the [Center for Novel Computing Heirarchies (CRNCH)](https://crnch.gatech.edu/) in the TINKER Lab with Dr. Tom Conte and PhD student Austin Adams on quantum programming languages and compilers!
 
-#### Publications
+## Publications
 - **[ASDF: A Compiler for Qwerty, a Basis-Oriented Quantum Programming Language](https://arxiv.org/abs/2501.13262)**: <br>
 Austin J. Adams, Sharjeel Khan, **Arjun S. Bhamra**, Ryan R. Abusaada, Anthony M. Cabrera, Cameron C. Hoechst, Travis S. Humble, Jeffrey S. Young, Thomas M. Conte <br>
 *2025 IEEE/ACM International Symposium on Code Generation and Optimization (CGO)* <br>
@@ -32,7 +32,7 @@ Austin J. Adams, Sharjeel Khan, **Arjun S. Bhamra**, Ryan R. Abusaada, Travis S.
 <!---->
 <!-- Our paper, **[ASDF: A Compiler for Qwerty, a Basis-Oriented Quantum Programming Language](https://arxiv.org/abs/2501.13262)**, has been accepted to CGO 2025, and our paper on the Qwerty language itself is set to appear at QCE25, in the QSYS track! -->
 
-### Work
+## Work
 I've spent most of my (limited) work life in the space of quantum compilers; in the summer of 2023, I worked @ [Quantinuum](https://www.quantinuum.com/), where I designed a domain specific language for Repeat-Until-Success circuits. The following summer, I worked @ [IBM](https://www.ibm.com/quantum) on rewriting their hardware Quantum Assembly compiler in [Rust](https://www.rust-lang.org/rust). This past summer (2025), I returned to IBM to work on quantum algorithms for combinatorial optimization problems.
 
 I also co-chair [dependently-typed](https://dtyped.netlify.app/), the compilers and programming languages club @ GT. As a part of the club, I have given talks on MLIR, [compiler optimizations for data locality](compiler_opt_for_data_locality.pdf), and [program synthesis](program_synthesis.pdf).
@@ -40,7 +40,7 @@ I also co-chair [dependently-typed](https://dtyped.netlify.app/), the compilers 
 A more complete resume can be found [here](resume.pdf), as well as my [CV](cv.pdf).
 
 ---
-### What do I do?
+# What do I do?
 I read somewhere recently that when asked about what someone does, the first answer is some sort of work related answer, and any hobby or passion is designated second-place. Perhaps that's because of how the question was phrased, but it's an interesting thought. Anywho, here are some things I find curious, interesting, fun, and the like :]
 - Drumming
 - Music, particularly Jazz and Funk, although I'll listen to basically anything that isn't country
