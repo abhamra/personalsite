@@ -10,8 +10,7 @@ template = "homepage.html"
   I'm a 4th year CS major @ Georgia Tech concentrating in [Systems Architecture](https://www.cc.gatech.edu/academics/threads/systems-architecture) and [Theory](https://www.cc.gatech.edu/academics/threads/theory). I will be beginning my PhD in EECS @ [Berkeley](https://www.berkeley.edu/) this fall, focusing on quantum compilers and programming systems!
 
   You can contact me @
-  - arjun [dot] bhamra25 [at] gmail.com
-  - arjun.bhamra25@gmail.com
+  - <img src="https://github.com/abhamra/personalsite/blob/master/content/Images/email.png?raw=true" alt="my email" width="240" />
   - [@abhamra](https://github.com/abhamra) on Github
   - [arjun-bhamra](https://www.linkedin.com/in/arjun-bhamra/) on LinkedIn
 </div>
