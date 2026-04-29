@@ -6,3 +6,5 @@ sort_by = "date"
 
 > List of all *[tags](/tags)*
 
+> View my posts as a *[graph](/graph)*
+

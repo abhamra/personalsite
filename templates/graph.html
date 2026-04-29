@@ -1,0 +1,226 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+<div class="graph-header">
+    {{ page.content | safe }}
+</div>
+
+<div id="graph-container" style="width:100%;height:80vh;"></div>
+
+<script>
+function isDark() {
+  // primary: check the class Apollo sets on <html>
+  if (document.documentElement.classList.contains("dark")) return true;
+  if (document.documentElement.classList.contains("light")) return false;
+  // fallback: check the darkModeStyle sheet
+  const darkModeStyle = document.getElementById("darkModeStyle");
+  if (darkModeStyle) return !darkModeStyle.disabled;
+  // last resort: system preference
+  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
+
+function graphColors() {
+  const dark = isDark();
+  return {
+    tagBg:    dark ? '#d79921' : '#b57614',
+    postBg:   dark ? '#458588' : '#076678',
+    textColor: dark ? '#f9f5d7' : '#1d2021',  // always inverse of bg
+    edge:     dark ? '#928374' : '#bdae93',
+  };
+}
+
+function applyGraphColors() {
+  if (!window._cy) return;
+  const c = graphColors();
+  window._cy.style()
+    .selector('node[type="tag"]')
+      .style('background-color', c.tagBg)
+      .style('color', c.textColor)
+    .selector('node[type="post"]')
+      .style('background-color', c.postBg)
+      .style('color', c.textColor)
+    .selector('node[type="post"]:selected')
+      .style('color', c.textColor)
+    .selector('edge')
+      .style('line-color', c.edge)
+    .update();
+}
+
+const tags = [
+  {% set tags_list = get_taxonomy(kind="tags") %}
+  {% for tag in tags_list.items %}
+ {
+  id: "tag:{{ tag.name | safe }}",
+  label: "{{ tag.name | safe }}",
+  type: "tag",
+  url: "{{ config.base_url | safe }}/tags/{{ tag.name | urlencode_strict | safe }}/",
+  count: {{ tag.pages | length }}
+} ,{% endfor %}
+];
+
+{% set blog_section = get_section(path="blog/_index.md") %}
+const posts = [
+  {% for page in blog_section.pages %}
+{
+  id: "post:{{ page.slug | safe }}",
+  label: {{ page.title | json_encode | safe }},
+  type: "post",
+  url: "{{ page.permalink | safe }}",
+  tags: {{ page.taxonomies.tags | default(value=[]) | json_encode | safe }}
+},  {% endfor %}
+];
+
+const edges = [];
+for (const post of posts) {
+  for (const tag of post.tags) {
+    edges.push({ source: post.id, target: "tag:" + tag });
+  }
+}</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
+
+<script>
+const c = graphColors();
+window._cy = cytoscape({
+  container: document.getElementById("graph-container"),
+  elements: [
+    ...tags.map(n => ({ data: n })),
+    ...posts.map(n => ({ data: n })),
+    ...edges.map(e => ({ data: { source: e.source, target: e.target } }))
+  ],
+  style: [
+    {
+      selector: 'node[type="tag"]',
+      style: {
+        'background-color': c.tagBg,
+        'label': 'data(label)',
+        'font-size': '10px',
+        'font-family': 'Jetbrains Mono',
+        'text-valign': 'center',
+        'text-halign': 'center',
+        'color': c.textColor,
+        'text-wrap': 'none',
+        <!-- 'text-max-width': 'mapData(count, 1, 10, 32, 72)', -->
+        'width': 'label',
+        'height': 'label',
+        'padding': '10px',
+        'shape': 'ellipse',
+        <!-- 'text-overflow-wrap': 'anywhere', -->
+        <!-- 'text-justification': 'center', -->
+      }
+    },
+    {
+      selector: 'node[type="post"]',
+      style: {
+        'background-color': c.postBg,
+        'font-family': 'Jetbrains Mono',
+        'label': '',
+        'width': 24,
+        'height': 24,
+      }
+    },
+    {
+      selector: 'node[type="post"]:selected',
+      style: {
+        'label': 'data(label)',
+        'font-size': '9px',
+        'font-family': 'Jetbrains Mono',
+        'text-valign': 'center',
+        'text-halign': 'center',
+        'color': c.textColor,
+        'text-wrap': 'wrap',
+        'text-max-width': '90px',
+        'text-overflow-wrap': 'anywhere',
+        'width': 60,
+        'height': 60,
+      }
+    },
+    {
+      selector: 'edge',
+      style: {
+        'width': 1,
+        'line-color': c.edge,
+        'opacity': 0.6
+      }
+    },
+  ],layout: {
+    name: 'cose',
+    animate: true,
+    randomize: true,
+    nodeRepulsion: 8000,
+    idealEdgeLength: 110,
+    padding: 20,
+  }
+});
+
+window._cy.on('tap', 'node[type="post"]', function(evt) {
+  const url = evt.target.data('url');
+  if (url) window.location.href = url;
+});
+
+window._cy.on('mouseover', 'node[type="post"]', function(evt) {
+  const node = evt.target;
+  const c = graphColors();  // re-read at hover time so it respects current theme
+  node.style({
+    'label': node.data('label'),
+    'font-size': '9px',
+    'text-valign': 'center',
+    'font-family': 'Jetbrains Mono',
+    'text-halign': 'center',
+    'color': c.textColor,
+    'text-wrap': 'wrap',
+    'text-max-width': '500px',
+    'text-overflow-wrap': 'anywhere',
+    'width': 60,
+    'height': 60,
+  });
+});
+
+window._cy.on('mouseout', 'node[type="post"]', function(evt) {
+  evt.target.style({
+    'label': '',
+    'width': 24,
+    'height': 24,
+  });
+});
+
+window._cy.on('tap', 'node[type="tag"]', function(evt) {
+  const url = evt.target.data('url');
+  if (url) window.location.href = url;
+});
+
+window._cy.on('mouseover', 'node[type="tag"]', function(evt) {
+    const node = evt.target;
+    
+    node.style({
+        // --- REDUCED POP EFFECT ---
+        'font-size': '16px',        // Minor font increase (+2px)
+        'padding': '10px',          // Double the padding for a substantial but proportional grow
+        // -------------------------
+        'z-index': 9999             // Keep this to bring to front
+    });
+});
+
+window._cy.on('mouseout', 'node[type="tag"]', function(evt) {
+    const node = evt.target;
+    // Reverts back to the base stylesheet (font-size: 14px, padding: 15px)
+    node.removeStyle('font-size padding z-index');
+});
+const themeObserver = new MutationObserver(() => {
+  applyGraphColors();
+});
+
+themeObserver.observe(document.documentElement, {
+  attributes: true,
+  attributeFilter: ['class']
+});
+
+if (window.matchMedia) {
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    applyGraphColors();
+  });
+}
+
+</script>
+{% endblock main_content %}
